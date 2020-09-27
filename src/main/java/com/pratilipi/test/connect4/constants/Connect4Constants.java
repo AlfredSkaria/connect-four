@@ -7,4 +7,6 @@ public class Connect4Constants {
 	public static final String INACTIVE="I";
 	public static final String PLAYER_YELLOW="Y";
 	public static final String PLAYER_RED="R";
+	public static final String GAME_COMPLETED = "COMPLETE";
+	public static final String GAME_NOT_COMPLETED = "INCOMPLETE";
 }

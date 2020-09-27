@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pratilipi.test.connect4.api.ConnectFourApi;
+import com.pratilipi.test.connect4.dto.PlayerMoves;
 import com.pratilipi.test.connect4.service.CoinDropService;
 
 @RestController
@@ -17,9 +18,8 @@ public class ConnectFourController implements ConnectFourApi{
 	CoinDropService coinDropService;
 
 	@Override
-	public ResponseEntity<String> getMoves() {
-
-		return null;
+	public ResponseEntity<PlayerMoves> getMoves(String playerId) {
+		return ResponseEntity.ok(coinDropService.getPlayerMoves(playerId));
 	}
 
 	@Override

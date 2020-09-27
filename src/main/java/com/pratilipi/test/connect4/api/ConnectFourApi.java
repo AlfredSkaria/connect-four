@@ -6,11 +6,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.pratilipi.test.connect4.dto.PlayerMoves;
 
 public interface ConnectFourApi {
 	
 	@GetMapping(value = "/user/moves", produces = "application/json")
-	ResponseEntity<String> getMoves();
+	ResponseEntity<PlayerMoves> getMoves(@RequestParam("playerId") String playerId);
 	
 	@PostMapping(value= "/move", produces = "application/json")
 	ResponseEntity<String> dropCoin(@RequestParam("column") String column,@RequestParam("playerId") String playerId) throws JsonProcessingException;

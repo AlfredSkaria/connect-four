@@ -19,7 +19,6 @@ public class PlayerMoveMatrix implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	// @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_pk")
 	private String userPk;
 
@@ -32,15 +31,28 @@ public class PlayerMoveMatrix implements Serializable {
 	@Column(name = "record_status")
 	private String recordStatus;
 
+	@Column(name = "player_y_moves")
+	private String yellowPlayerMoves;
+
+	@Column(name = "player_r_moves")
+	private String redPlayerMoves;
+
+	@Column(name = "game_status")
+	private String gameStatus;
+
 	public PlayerMoveMatrix() {
 	}
 
-	public PlayerMoveMatrix(String userPk, String matrix, String prevPlayer, String recordStatus) {
+	public PlayerMoveMatrix(String userPk, String matrix, String prevPlayer, String recordStatus,
+			String yellowPlayerMoves, String redPlayerMoves, String gameStatus) {
 		super();
 		this.userPk = userPk;
 		this.matrix = matrix;
 		this.prevPlayer = prevPlayer;
 		this.recordStatus = recordStatus;
+		this.yellowPlayerMoves = yellowPlayerMoves;
+		this.redPlayerMoves = redPlayerMoves;
+		this.gameStatus = gameStatus;
 	}
 
 	public String getUserPk() {
@@ -73,6 +85,30 @@ public class PlayerMoveMatrix implements Serializable {
 
 	public void setPrevPlayer(String prevPlayer) {
 		this.prevPlayer = prevPlayer;
+	}
+
+	public String getYellowPlayerMoves() {
+		return yellowPlayerMoves;
+	}
+
+	public void setYellowPlayerMoves(String yellowPlayerMoves) {
+		this.yellowPlayerMoves = yellowPlayerMoves;
+	}
+
+	public String getRedPlayerMoves() {
+		return redPlayerMoves;
+	}
+
+	public void setRedPlayerMoves(String redPlayerMoves) {
+		this.redPlayerMoves = redPlayerMoves;
+	}
+
+	public String getGameStatus() {
+		return gameStatus;
+	}
+
+	public void setGameStatus(String gameStatus) {
+		this.gameStatus = gameStatus;
 	}
 
 }
